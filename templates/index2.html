@@ -1,0 +1,187 @@
+<head>
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+border: 2px outset black;}
+table {
+
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:20%;
+  margin-right:20%;
+
+}
+th{
+background-color: rgb(0,0,0);
+color:white;}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.column {
+
+  float: left;
+  padding: 5px;
+}
+#large{position: absolute;
+  top:50px;
+  right: 90px;
+  width: 70px;
+  padding: 10px;}
+#small{
+padding-left:40px;}
+
+.row{
+width:100%;
+
+}
+
+
+.content {
+
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+footer {
+  text-align: left;
+  margin-left:10%;
+
+  color: black;
+}
+#total{
+  border:1px solid red;
+  color:red;
+}
+</style>
+</head>
+<body>
+<center class="content">
+
+<div class="row">
+  <div class="column" id="small"><img src="file:///C:/Users/baljeetsingh/PycharmProjects/carwashndetailing/static/logo.jpeg" height="220" width="220"/></div>
+  <div class="column" id="large">
+    <h1 id="header">Invoice</h1>
+  </div>
+</div>
+  <br>
+
+<table>
+  <tr>
+    <th colspan="2">Job Card</th>
+
+  </tr>
+  <tr>
+    <td>GST Number</td>
+    <td>{{data["GST Number"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{data["Name"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Vehicle Type</td>
+    <td>{{data["Vehicle Type"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{data["Email"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td>{{data["Mobile"]}}</td>
+
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>{{data["City"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Car Model</td>
+    <td>{{data["Car Model"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Registration Number</td>
+    <td>{{data["Registration Number"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>{{data["Date"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Delivery Date</td>
+    <td>{{data["Delivery Date"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Mudflap</td>
+    <td>{{data["Mudflap"]}}</td>
+
+  </tr>
+  <tr>
+    <td>Mats</td>
+    <td>{{data["Mats"]}}</td>
+
+  </tr>
+
+  <tr>
+    <td>Accessories</td>
+    <td>{{data["Accessories"]}}</td>
+
+  </tr>
+</table>
+
+<br><br>
+<table>
+  <tr>
+    <th colspan="2">Services Taken</th>
+
+  </tr>
+
+    {% for item in data["Service Taken"] %}
+    <TR>
+
+       <TD class="c2">{{item.name}}</TD>
+       <TD class="c3">₹ {{item.price}}</TD>
+
+    </TR>
+
+    {% endfor %}
+<tr id="total">
+  <td >Total (In Rs.)</td>
+  <td>₹ {{data["Total"]}}</td>
+</tr>
+</table>
+
+  <center>
+<h3 >Visit <a href="www.carwashndetailingjbp.com" >www.carwashndetailingjbp.com</a> for more Products and Service details</h3>
+<h3 >Follow us on <a href="https://www.instagram.com/car_wash_n_detailing/?hl=en">Instagram</a></h3>
+  </center>
+  </center>
+
+  <footer>
+  <h4>Terms & Conditions:</h4>
+  <h4><li>Vehicles are driven and handled at owner's risk</li></h4>
+  <h4><li>We would not be responsible for any damage prior to during possession & afer handling over possession of the vehicle for any treatement service </li></h4>
+  <h4><li>We would not be responsible for any damages occuring during the vehicle being parked or driven in the outlet premise or outside, or during the Pick & Drop Service of the Vehicle</li></h4>
+  <h4><li>Any Personal Belongings left behind in the vehivle while booking for various treatement services shall be solely at the owner's risk & responsibility</li></h4>
+  <h4><li>Conditions Apply</li></h4>
+  <h4><li>Subject to indore jurisdiction</li></h4>
+  <h4><li>E. & O.E.</li></h4>
+  </footer>
+</body>

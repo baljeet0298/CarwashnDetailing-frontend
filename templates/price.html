@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="myP">Large</p>
+<p id="demo"/>
+<div id="dev"></div>
+
+<script type="text/javascript">
+  var x=document.getElementById("myP").innerHTML;
+  document.getElementById("demo").innerHTML=x;
+
+  var json_Data=[
+ ["Quick Wash",99,149,199],
+ ["Quick Exterior Snow Foam Wash",149,199,249],
+ ["Sanitization",199,199,199],
+ ["AlloyWheel Cleaning",549,649,749],
+ ["Alloy Wheel Coating",1649,1749,1849],
+ ["Bike Ceramic Coating",5549,5549,5549],
+ ["Bike Detailing",599,599,599],
+ ["Bike Pampering Treatment",1149,1149,1149],
+ ["Bike Wash Wax", 299,299,299],
+ ["Ceramic Coating",   13999,15999,17999],
+ ["Ceramic Single Panel Coating",3549,3649,3749],
+ ["Chrome Coating",    649,649,649],
+ ["Engine Cleaning",   449,549,649],
+ ["Engine Liqueur",    1199,1199,1199],
+ ["AC Disinfectant",   1249,1349,1349],
+ ["Exterior Wash N Vacuuming", 599,649,699],
+ ["Glass Coat (All Glasses)",  1699,1699,1699],
+ ["Glass Coat (Sunroof)",  849,849,849],
+ ["Glass Coat (Windscreen)",   849,849,849],
+ ["Intensive Interior",    1099,1199,1299],
+ ["Vacuum Cleaning",   220,240,260],
+ ["Teflon Coating",    1499,1599,1699],
+ ["Antioxidant Interior Cleaning", 2199,2399,2599],
+ ["Paint/Cement Spot Removal", 1199,1499,1799],
+ ["Premium Paint Protection Coat", 6500,7500,8500],
+ ["Shine Coat",849,1049,1249],
+ ["Super Detailing",8199,8199,8199]];
+
+  var type1={"Small":1,"Medium":2,"Large":3};
+
+var y="";
+  for (var i=0; i<json_Data.length; i++) {
+    y=y+'<input type="checkbox" id="vehicle1"><label for="vehicle1">'+json_Data[i][0]+json_Data[i][type1[x]]+'</label><br>';
+  }
+document.getElementById("dev").innerHTML=  y;
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+  </script>
+</body>

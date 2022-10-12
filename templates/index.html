@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<title>CAR WASH N DERAILING</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+  <style>
+
+* {
+   font-family: font-family: "Times New Roman", Times, serif;
+}
+  body  {
+
+  background-image: url("static/bc.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color:white;
+  opacity:3;
+}
+
+  .cards{
+      width:250px;
+      height:500px;
+      border-style:outset;
+      float:left;
+      margin-left:50px;
+      margin-bottom: 50px;
+      padding:20px;
+
+
+
+  }
+
+
+  #parent{
+    margin:50px;
+    align:center;
+  }
+  #banner{
+  max-width: 100%;
+  height: auto;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top:-15px;
+  border-radius: 10px;
+  }
+  #home1{
+  margin-top:500px;
+  }
+  #about,#contact{
+  margin:50px;}
+#ac-wrapper:hover{
+display:block;}
+
+</style>
+
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+
+<div class="w3-top" >
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>CAR WASH N DETAILING</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#products" class="w3-bar-item w3-button">Services</a>
+      <a href="#products" class="w3-bar-item w3-button">About us</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px" id="home1">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="products">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Services</h3>
+  </div>
+
+
+  </div>
+    <div id="parent">
+
+    </div>
+
+  <!-- Contact Section -->
+
+  <div class="w3-container w3-padding-32 " id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>First Time in Jabalpur
+      , where you can get the hassle free service for your car from experts.
+      Trained technician, 100% transparency.We have a Largest Multi-Brand Network of Car Service Workshop in Jabalpur.
+      Get the Right Inspection at First Choice Service Center. Free pick & drop facility.
+      Get Now! Best quality Spare Parts. Any brand car service. Convenient Online Booking.
+    </p>
+  </div>
+
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Lets get in touch and talk about your next car servicing.<br>
+Visit : Car Wash N Detailing<br>Beside Dr.Pawan Sthapak Golbazaar<br> JABALPUR, MADHYA PRADESH  <br>
+Mobile : 9522001313 <br>
+Follow us on : <a href="https://www.instagram.com/car_wash_n_detailing/?hl=en">Instagram</a> <a href="https://www.facebook.com/carwashndetailingjbp">Facebook</a> </p>
+    <form action="http://127.0.0.1:5000/send" target="_blank" method="POST">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Query" required name="Query">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+
+
+<!-- End page content -->
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a  target="_blank" class="w3-hover-text-green">CAR WASH N DETAILING</a></p>
+</footer>
+
+
+<script>
+ var x ="", i;
+var json_Data=[
+ ["Quick Wash",99,149,199],
+ ["Quick Exterior Snow Foam Wash",149,199,249],
+ ["Sanitization",199,199,199],
+ ["AlloyWheel Cleaning",549,649,749],
+ ["Alloy Wheel Coating",1649,1749,1849],
+ ["Bike Ceramic Coating",5549,5549,5549],
+ ["Bike Detailing",599,599,599],
+ ["Bike Pampering Treatment",1149,1149,1149],
+ ["Bike Wash Wax",	299,299,299],
+ ["Ceramic Coating",	13999,15999,17999],
+ ["Ceramic Single Panel Coating",3549,3649,3749],
+ ["Chrome Coating",	649,649,649],
+ ["Engine Cleaning",	449,549,649],
+ ["Engine Liqueur",	1199,1199,1199],
+ ["AC Disinfectant",	1249,1349,1349],
+ ["Exterior Wash N Vacuuming",	599,649,699],
+ ["Glass Coat (All Glasses)",	1699,1699,1699],
+ ["Glass Coat (Sunroof)",	849,849,849],
+ ["Glass Coat (Windscreen)",	849,849,849],
+ ["Intensive Interior",	1099,1199,1299],
+ ["Vacuum Cleaning",	220,240,260],
+ ["Teflon Coating",	1499,1599,1699],
+ ["Antioxidant Interior Cleaning",	2199,2399,2599],
+ ["Paint/Cement Spot Removal",	1199,1499,1799],
+ ["Premium Paint Protection Coat",	6500,7500,8500],
+ ["Shine Coat",849,1049,1249],
+ ["Super Detailing",8199,8199,8199]]
+ for (i=0; i<json_Data.length; i++) {
+ if(json_Data[i][0].length < 14){
+   x=x+'<div class="cards"><h2>'+json_Data[i][0]+'</h2><p>Small</p><h1>₹'+json_Data[i][1]+'</h1><hr><p>Medium</p><h1>₹'+json_Data[i][2]+'</h1><hr><p>Large</p><h1>₹'+json_Data[i][3]+'</h1></div>';
+ }else{
+ x=x+'<div class="cards"><h4><b>'+json_Data[i][0]+'</b></h4><p>Small</p><h1>₹'+json_Data[i][1]+'</h1><hr><p>Medium</p><h1>₹'+json_Data[i][2]+'</h1><hr><p>Large</p><h1>₹'+json_Data[i][3]+'</h1></div>';
+ }
+ }
+ document.getElementById("parent").innerHTML = x;
+
+
+ </script>
+</body>
+</html>

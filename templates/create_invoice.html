@@ -1,0 +1,454 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Invoice</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+var citiesByState = {
+"Honda": [
+  "ACCORD",
+	"ACCORD HYBRID",
+	"CIVIC",
+	"CIVIC HYBRID",
+	"CR-V 2WD",
+	"CR-V 4WD",
+	"ELEMENT 2WD",
+	"ELEMENT 4WD",
+	"INSIGHT",
+	"MDX 4WD",
+	"ODYSSEY 2WD",
+	"PILOT 2WD",
+	"PILOT 4WD",
+	"RIDGELINE 4WD",
+	"RL",
+	"RSX",
+	"S2000",
+	"TL",
+	"TSX"],
+"Suzuki": ["Swift","Ertiga","Baleno"],
+"Hyundai": ["i10","i20"]
+}
+function makeSubmenu(value) {
+if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
+else {
+var citiesOptions = "";
+for(cityId in citiesByState[value]) {
+citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
+}
+document.getElementById("citySelect").innerHTML = citiesOptions;
+}
+}
+function displaySelected() { var country = document.getElementById("countrySelect").value;
+var city = document.getElementById("citySelect").value;
+alert(country+"\n"+city);
+}
+function resetSelection() {
+document.getElementById("countrySelect").selectedIndex = 0;
+document.getElementById("citySelect").selectedIndex = 0;
+}
+</script>
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+		<link rel='icon' href="Images/IMG-20200815-WA0013.jpg" type='image/x-icon'/ >
+
+		<script src="script.js"></script>
+	</head>
+
+  <style>
+  /* reset */
+
+
+*
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*, *:before, *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font: inherit;
+      }
+
+html {
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      line-height: 1.2;
+      background-color: white;
+      }
+			body {
+							width: 100%;
+							height: 100%;
+							margin: 0;
+							padding: 0;
+
+					}
+
+form {
+      background-color: white);
+      width: 38rem;
+      height: auto;
+      margin: 2em auto;
+      padding: 2em 3em;
+      border-radius: 0.5em;
+      }
+
+fieldset {
+      background-color: white;
+      border-color: Black;
+      height: auto;
+      }
+
+legend {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      margin: 0 auto 1em auto;
+      }
+
+p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1em auto
+      }
+
+#message-area {
+      align-items: flex-start;
+      }
+
+fieldset label, #gender {
+      width: 8em;
+      }
+
+#gender-selector label {
+      width: 4em;
+      }
+
+#gender-selector input{
+      margin-right: 0.4em;
+      }
+
+fieldset label[for="agree"] {
+      width: 18em;
+      }
+
+#checkbox,
+#gender-selector {
+      justify-content: flex-start;
+      }
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+      width: 18em;
+      margin-right: 6.95em;
+      padding: 0.4em 0.7em;
+      }
+
+textarea {
+      max-width: 18em;
+      }
+
+input[type="checkbox"] {
+      margin-right: 0.5em;
+      }
+
+input[type="submit"] {
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      background-color: #800000;
+      color: white;
+      border: none;
+      border-radius: 0.4em;
+      padding: 1.2em 3.2em;
+      margin: 1em auto 0 auto;
+      }
+{
+	border: 0;
+	box-sizing: content-box;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+/* content editable */
+
+*[contenteditable] { border-radius: 0.25em; min-width: 1em; outline: 0; }
+
+*[contenteditable] { cursor: pointer; }
+
+*[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], img.hover { background: #DEF; box-shadow: 0 0 1em 0.5em #DEF; }
+
+span[contenteditable] { display: inline-block; }
+
+/* heading */
+
+h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; }
+
+/* table */
+
+table { font-size: 75%; table-layout: fixed; width: 100%; }
+table { border-collapse: separate; border-spacing: 2px; }
+th, td { border-width: 1px; padding: 0.5em; position: relative; text-align: left; }
+th, td { border-radius: 0.25em; border-style: solid; }
+th { background: #EEE; border-color: #BBB; }
+td { border-color: #DDD; }
+
+/* page */
+
+html { font: 16px/1 'Open Sans', sans-serif; overflow: auto; padding: 0.5in; }
+html { background: white; cursor: default; }
+
+
+/* header */
+
+header { margin: 0 0 3em; }
+header:after { clear: both; content: ""; display: table; }
+
+header h1 { background: #000; border-radius: 0.25em; color: #FFF; margin: 0 0 1em; padding: 0.5em 0; }
+header address { float: left; font-size: 115%; font-style: normal; line-height: 1.25; margin: 0 1em 1em 0; }
+header address p { margin: 0 0 0.25em; }
+header span, header img { display: block; float: right; }
+header span { margin: 0 0 1em 1em; max-height: 25%; max-width: 60%; position: relative; }
+header img { max-height: 70%; max-width: 70%; }
+header input { cursor: pointer; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; height: 100%; left: 0; opacity: 0; position: absolute; top: 0; width: 100%; }
+
+/* article */
+
+article, article address, table.meta, table.inventory { margin: 0 0 3em; }
+article:after { clear: both; content: ""; display: table; }
+article h1 { clip: rect(0 0 0 0); position: absolute; }
+
+article address { float: left; font-size: 125%; font-weight: bold; }
+address{font-size: 225%;}
+/* table meta & balance */
+
+table.meta, table.balance { float: right; width: 36%; }
+table.meta:after, table.balance:after { clear: both; content: ""; display: table; }
+
+/* table meta */
+
+table.meta th { width: 40%; }
+table.meta td { width: 60%; }
+
+/* table items */
+
+table.inventory { clear: both; width: 100%; }
+table.inventory th { font-weight: bold; text-align: center; }
+
+table.inventory td:nth-child(1) { width: 26%; }
+table.inventory td:nth-child(2) { width: 38%; }
+table.inventory td:nth-child(3) { text-align: right; width: 12%; }
+table.inventory td:nth-child(4) { text-align: right; width: 12%; }
+table.inventory td:nth-child(5) { text-align: right; width: 12%; }
+
+/* table balance */
+
+table.balance th, table.balance td { width: 50%; }
+table.balance td { text-align: right; }
+
+/* aside */
+
+aside h1 { border: none; border-width: 0 0 1px; margin: 0 0 1em; }
+aside h1 { border-color: #999; border-bottom-style: solid; }
+
+/* javascript */
+
+.add, .cut
+{
+	border-width: 1px;
+	display: block;
+	font-size: .8rem;
+	padding: 0.25em 0.5em;
+	float: left;
+	text-align: center;
+	width: 0.6em;
+}
+
+.add, .cut
+{
+	background: #800000;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	background-image: -moz-linear-gradient#800000 5%, #000000 100%);
+	background-image: -webkit-linear-gradient(#800000 5%, #000000 100%);
+	border-radius: 0.5em;
+	border-color: #800000;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	text-shadow: 0 -1px 2px rgba(0,0,0,0.333);
+}
+
+.add { margin: -2.5em 0 0; }
+
+.add:hover { background: #00ADEE; }
+
+.cut { opacity: 0; position: absolute; top: 0; left: -1.5em; }
+.cut { -webkit-transition: opacity 100ms ease-in; }
+
+tr:hover .cut { opacity: 1; }
+
+@media print {
+	* { -webkit-print-color-adjust: exact; }
+	html { background: none; padding: 0; }
+	body { box-shadow: none; margin: 0; }
+	span:empty { display: none; }
+	.add, .cut { display: none; }
+}
+
+@page { margin: 0; }
+  </style>
+	<body>
+		<header>
+			<h1>Car Wash n Detailing Invoice</h1>
+			<address >
+				<p>Car Wash n Detailing</p>
+				<p>Golbazaar, Jabalpur</p>
+					<p>Pincode: 482002</p>
+						<p>Phone number: 09522001313</p>
+			</address>
+			<span><img alt="" src={{url_for('static', filename="logo.jpeg"><input type="file" accept="image/*"></span>
+		</header>
+		<div>
+			<form action="createinvoice" method="post">
+				<fieldset>
+					 <legend>Customer Details</legend>
+					 <p> Thank you for choosing Car wash n Detailing, Jabalpur. Here is your Service Details. For more details Call:+91 8349965494</p>
+<br>
+<br>
+<p>
+	 <label for="GST Number">GST Number</label>
+	 <input type="text" id="first-name" name="gstnumber" placeholder="ABCDE12345">
+</p>
+
+					 <p>
+							<label for="first-name">Name</label>
+							<input type="text" id="first-name" name="firstname" placeholder="Customer Name">
+					 </p>
+					 <p>
+							<label for="servicetype">Membership Taken</label>
+							<select id="servicetype" name="membership" placeholder="No">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+
+							</select>
+					 </p>
+
+
+					 <p>
+							<label for="vehicletype">Type of Vehicle</label>
+							<select id="last-name" name="vehicletype" placeholder="Medium">
+								<option value="Small">Small</option>
+								<option value="Medium">Medium</option>
+								<option value="Large">Large</option>
+							</select>
+					 </p>
+
+					 <p>
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" placeholder="****@mail.com">
+					 </p>
+					 <p>
+							<label for="phone">Phone</label>
+							<input type="number" id="phone" name="phone" placeholder="+91-**********">
+					 </p>
+					 <p>
+
+					 	 <label for="Car Make">Car Make</label>
+						 <select id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+						 <option value="" disabled selected>Choose Make</option>
+						 <option value="Honda">Honda</option>
+						 <option value="Suzuki">Suzuki</option>
+						 <option value="Hyundai">Hyundai</option>
+						 </select>
+
+
+					 </p>
+					 <p>
+					 	 <label for="Car Model">Car Model</label>
+						 <select id="citySelect" size="1" >
+						 <option value="" disabled selected>Choose Model</option>
+						 <option></option>
+						 </select>
+
+					 </p>
+					 <p>
+							<label for="town">City</label>
+							<select name="city" id="city">
+								 <option value="Jabalpur">Jabalpur</option>
+								 <option value="Bhopal">Bhopal</option>
+								 <option value="Indore">Indore</option>
+								 <option value="Gwalior">Gwalior</option>
+								 <option value="Others">Others</option>
+							</select>
+					 </p>
+					 <p>
+							<label for="Registration Number">Registration Number</label>
+							<input type="text","number" name="registrationnumber"placeholder="Registration Number">
+					 </p>
+					 <p>
+						 <label for="Date and Time">In Date and Time</label>
+						 <input type="date" name="date" placeholder="Date and Time">
+					</p>
+					<p>
+						<label for="Date and Time">Estimated Date of Delivery</label>
+						<input type="date" name="deliverydate" placeholder="Date and Time">
+				 </p>
+
+					 <p>
+							<label for="language">Mud flaps</label>
+							<input type="number" id="language" name="mudflap">
+					 </p>
+					 <p>
+							<label for="language">Mats</label>
+							<input type="number" id="language" name="mats">
+					 </p>
+					 <p id="message-area">
+							<label for="message">Accessories present in Car</label>
+							<textarea id="message" cols="35" rows="5" name="accessories" placeholder="More information..."></textarea>
+					 </p>
+
+					 <p>
+					 	 <label for="language">Services Taken</label>
+					 <fieldset>
+					 		<input type="checkbox" id="vehicle1" name="servicetaken" value="Shampoo">
+						<label for="vehicle1">Shampoo - ₹100</label><br><br>
+						 <input type="checkbox" id="vehicle2" name="servicetaken" value="Quick Wash">
+						 <label for="vehicle2">Quick Wash - ₹150</label><br><br>
+						 <input type="checkbox" id="vehicle3" name="servicetaken" value="Detailing">
+						  <label for="vehicle3">Detailing - ₹5000</label><br><br>
+							<input type="checkbox" id="vehicle3" name="servicetaken" value="Detailing">
+ 						  <label for="vehicle3">Detailing - ₹5000</label><br><br>
+							<input type="checkbox" id="vehicle3" name="servicetaken" value="Detailing">
+ 						  <label for="vehicle3">Detailing - ₹5000</label><br><br>
+							<input type="checkbox" id="vehicle3" name="servicetaken" value="Detailing">
+ 						  <label for="vehicle3">Detailing - ₹5000</label><br><br>
+					 </fieldset>
+				 </p>
+
+
+					 <p id="checkbox">
+							<input type="checkbox" id="agree" name="agree">
+							<label for="agree">I agree the Terms and Conditions</label>
+					 </p>
+					 <p>
+							<input type="submit" value="Submit">
+					 </p>
+				</fieldset>
+			</form>
+
+
+	</body>
+</html>
