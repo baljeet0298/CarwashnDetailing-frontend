@@ -10,7 +10,7 @@ from flask import Flask, render_template, request, current_app
 
 app = Flask(__name__)
 
-
+# adding new comment
 @app.route('/')
 def home():
     return render_template('./index.html')
